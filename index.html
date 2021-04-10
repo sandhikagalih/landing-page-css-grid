@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Roboto:wght@100;400&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;400&family=Roboto:wght@100;400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <title>Responsive Web CSS Grid</title>
   </head>
-  <body>
-    <div class="container">
-      <nav class="menu">
+  <body id="home">
+    <div class="container" id="header">
+      <nav class="menu" id="nav-bar">
         <div class="menu-toggle">
           <input type="checkbox" />
           <span></span>
@@ -23,15 +20,15 @@
           <h1>WPU Merch Shop</h1>
         </div>
         <ul class="menu-list">
-          <li><a href="">Home</a></li>
-          <li><a href="">Products</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Gallery</a></li>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#services" class="nav-link">Services</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
         </ul>
       </nav>
 
       <div class="header">
         <div class="hero">
+          <img src="img/logo-putih.png" alt="header-img" id="header-img" />
           <h2 class="heading">WPU Merch Shop</h2>
           <p class="sub-heading">Hoodie & T-Shirt</p>
         </div>
@@ -45,42 +42,30 @@
         </div>
       </div>
 
-      <section class="services">
+      <section class="services" id="services">
         <div class="service">
           <div class="icon">💻</div>
           <h3>Tutorials</h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-            laudantium voluptatem labore distinctio dolores aperiam!
-          </p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab laudantium voluptatem labore distinctio dolores aperiam!</p>
         </div>
         <div class="service">
           <div class="icon">🎓</div>
           <h3>Online Course</h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-            laudantium voluptatem labore distinctio dolores aperiam!
-          </p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab laudantium voluptatem labore distinctio dolores aperiam!</p>
         </div>
         <div class="service">
           <div class="icon">🎙</div>
           <h3>Podcast</h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-            laudantium voluptatem labore distinctio dolores aperiam!
-          </p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab laudantium voluptatem labore distinctio dolores aperiam!</p>
         </div>
         <div class="service">
           <div class="icon">👕</div>
           <h3>Merch</h3>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab
-            laudantium voluptatem labore distinctio dolores aperiam!
-          </p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab laudantium voluptatem labore distinctio dolores aperiam!</p>
         </div>
       </section>
 
-      <section class="gallery">
+      <section class="gallery" id="gallery">
         <h2>Gallery</h2>
         <img src="https://source.unsplash.com/random/201x201" alt="" />
         <img src="https://source.unsplash.com/random/202x202" alt="" />
@@ -92,6 +77,27 @@
         <img src="https://source.unsplash.com/random/207x208" alt="" />
         <img src="https://source.unsplash.com/random/207x209" alt="" />
         <img src="https://source.unsplash.com/random/207x210" alt="" />
+      </section>
+
+      <section class="contact">
+        <form action="https://www.freecodecamp.com/email-submit" id="form">
+          <input type="email" name="email" id="email" placeholder="masukkan email anda.." />
+          <input type="submit" id="submit" />
+        </form>
+      </section>
+
+      <section class="video">
+        <iframe
+          style="z-index: -1"
+          id="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/IvmbowDpKpw"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
       </section>
     </div>
     <script>
@@ -106,5 +112,6 @@
         });
       });
     </script>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
 </html>
