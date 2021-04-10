@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ddd;
+  min-height: 100vh;
+  font-size: 18px;
+  font-family: Oswald, Roboto, Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+
+img {
+  width: 100%;
+}
+
+/* container */
+.container {
+  display: grid;
+  gap: 20px;
+}
+
+/* navigation */
+.menu {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.menu .brand {
+  color: #333;
+  font-size: 20px;
+}
+
+.menu ul {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.menu a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  text-align: center;
+  background-color: #222;
+  font-size: 16px;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  /* background-color: black; */
+  position: relative;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: #222;
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+.menu-toggle input {
+  display: block;
+  position: absolute;
+  background-color: black;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -5px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  transform-origin: 0 0;
+}
+.menu-toggle span:nth-child(4) {
+  transform-origin: 0 100%;
+}
+
+span:nth-child(2).slide {
+  background-color: #fff;
+  transform: rotate(45deg) translate(-1px, -1px);
+  z-index: 99;
+}
+
+span:nth-child(4).slide {
+  background-color: #fff;
+  transform: rotate(-45deg) translate(-1px, 0);
+  z-index: 99;
+}
+
+span:nth-child(3).slide {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* header */
+.header {
+  display: grid;
+  gap: 5px;
+  grid-template-areas:
+    'hero hero feature-1'
+    'hero hero feature-2';
+}
+
+.hero {
+  grid-area: hero;
+  min-height: 300px;
+  background-image: url(img/hero.png);
+  background-size: cover;
+  background-position: center;
+  padding: 50px;
+}
+
+.hero > * {
+  display: none;
+}
+
+.features {
+  background: #000;
+  color: white;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  cursor: pointer;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.feature-1 {
+  grid-area: feature-1;
+  background-image: url(img/hoodie.jpeg);
+  background-size: cover;
+}
+
+.feature-2 {
+  grid-area: feature-2;
+  background-image: url(img/tshirt.jpeg);
+  background-size: cover;
+}
+
+.features .price {
+  font-weight: 100;
+  font-size: 3em;
+}
+
+/* Services */
+.services {
+  order: 3;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.service {
+  background: #fff;
+  padding: 10px;
+  text-align: center;
+  border: solid 1px #aaa;
+  border-radius: 3px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.service .icon {
+  font-size: 3em;
+}
+
+.service p {
+  letter-spacing: 1px;
+  font-size: 0.8em;
+  font-weight: 100;
+}
+
+/* Gallery */
+.gallery {
+  order: 4;
+  display: grid;
+  gap: 5px;
+  margin-top: 50px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.gallery h2 {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  text-align: center;
+  grid-column: 1 / -1;
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+  .menu {
+    grid-template-columns: 1fr;
+    order: 1;
+  }
+  .menu .brand {
+    display: none;
+  }
+
+  .hero > * {
+    display: block;
+    background-color: #222;
+    color: #eaeaea;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .menu {
+    grid-template-columns: 1fr;
+    order: -1;
+    justify-items: end;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .menu ul {
+    display: flex;
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 0;
+    background-color: #222;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all 1s;
+  }
+
+  .menu ul.slide {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    margin: 15px;
+  }
+  .header {
+    grid-template-areas:
+      'hero'
+      'feature-1'
+      'feature-2';
+  }
+}
