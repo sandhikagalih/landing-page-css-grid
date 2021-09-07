@@ -8,10 +8,10 @@ html {
 }
 
 body {
-  background: #ddd;
+  background: #eaeaea;
   min-height: 100vh;
   font-size: 18px;
-  font-family: Oswald, Roboto, Arial, Helvetica, sans-serif;
+  font-family: Oswald, Lexend Deca, sans-serif;
   margin: 50px;
   height: 1600px;
 }
